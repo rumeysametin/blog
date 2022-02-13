@@ -3,7 +3,7 @@ from .forms import RegisterForm, LoginForm
 #from . import forms
 
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate   #The user's existence is queried
+from django.contrib.auth import login, logout, authenticate   #The user's existence is queried
 from django.contrib import messages
 
 # Create your views here.
@@ -52,4 +52,6 @@ def loginUser(request):
             
     return render(request, "login.html", context)
 def logoutUser(request):
-    pass
+    logout(request)
+    messages.success(request, "You have successfully logged out")
+    return redirect("index")

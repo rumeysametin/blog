@@ -7,5 +7,13 @@
     <p>I write articles on various topics such as healthy living, pen pals and yoga on this blog, which I set out with the aim of motivating my readers for a happier and more peaceful life.</p>
 </div>
 
+<p>
+    {% if request.user.is_authenticated %}
+        Logged in, {{request.user.username}}
+    {% else %}
+        Not logged in
+    {% endif %}
+</p>
+
 {% endblock body %}
 
