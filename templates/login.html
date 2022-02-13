@@ -1,17 +1,21 @@
 {% extends "layout.html" %}
 
 {% block body %}
+{% load crispy_forms_tags %}
 
-<h3>login</h3>
-<hr>
-
-<form method = "POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <br>
-    <button type = "submit" class = "btn btn-danger">login</button>
-
-</form>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3>Login</h3>
+        <hr>
+        <form method = "POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <br>
+            <button type = "submit" class = "btn btn-danger">login</button>
+        
+        </form>
+    </div>
+  </div>
 
 {% endblock body %}
 
