@@ -5,5 +5,13 @@
 <h3>login</h3>
 <hr>
 
+<form method = "POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <br>
+    <button type = "submit" class = "btn btn-danger">login</button>
+
+</form>
+
 {% endblock body %}
 
